@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="anchor2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="225.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerMainWindow">
+    <TabPane prefHeight="408.0" prefWidth="480.0" tabClosingPolicy="UNAVAILABLE">
+        <Tab text="Info">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="480.0"><Label fx:id="infoTitleLabel" alignment="CENTER" layoutX="167.0" layoutY="14.0" prefHeight="33.0" prefWidth="143.0" text="Dane Konta:">
+                <font>
+                    <Font size="24.0" />
+                </font></Label>
+                <Label layoutX="72.0" layoutY="62.0" text="ID: ">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <Label layoutX="72.0" layoutY="92.0" text="Środki : ">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <Label fx:id="boxID" layoutX="108.0" layoutY="62.0" text="Label">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <Label fx:id="boxMoney" layoutX="155.0" layoutY="92.0" text="Label">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <Label layoutX="72.0" layoutY="122.0" text="Numer karty: ">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <Label fx:id="boxCardNumber" layoutX="202.0" layoutY="122.0" text="Label">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+            </AnchorPane>
+        </Tab>
+        <Tab text="Wpłata">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="235.0">
+                <Label layoutX="39.0" layoutY="58.0" text="Podaj kwotę:">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <Label layoutX="202.0" layoutY="14.0" text="Wpłata: " textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="21.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="moneyAddTextField" layoutX="166.0" layoutY="60.0" />
+                <Button layoutX="183.0" layoutY="108.0" mnemonicParsing="false" onAction="#addMoneyToAccount" text="Zatwierdź">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+            </AnchorPane>
+        </Tab>
+        <Tab text="Wypłata">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="235.0">
+                <Label fx:id="removeMoneyLabel" layoutX="39.0" layoutY="58.0" text="Podaj kwotę:">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="moneyRemoveTextField" layoutX="166.0" layoutY="60.0" />
+                <Button layoutX="183.0" layoutY="108.0" mnemonicParsing="false" onAction="#removeMoneyFromAccount" text="Zatwierdź">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+                <Label layoutX="202.0" layoutY="14.0" text="Wypłata: " textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="21.0" />
+                    </font>
+                </Label>
+            </AnchorPane>
+        </Tab>
+        <Tab text="Przelew">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="235.0">
+                <Label fx:id="removeMoneyToAnotherAccountLabel" layoutX="57.0" layoutY="32.0" text="Podaj kwotę:">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="moneyRemoveToAnotherAccountTextField" layoutX="183.0" layoutY="34.0" />
+                <Label fx:id="getIDLabel" layoutX="7.0" layoutY="63.0" text="Podaj ID odbiorcy:">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="getID" layoutX="183.0" layoutY="65.0" />
+                <Button layoutX="183.0" layoutY="103.0" mnemonicParsing="false" onAction="#makeTransfer" text="Zatwierdź">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+            </AnchorPane>
+        </Tab>
+        <Tab text="Historia">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="235.0">
+            <children>
+               <ListView fx:id="listOperationHistory" layoutX="52.0" prefHeight="194.0" prefWidth="377.0" />
+            </children></AnchorPane>
+        </Tab>
+        <Tab text="Ustawienia">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="235.0">
+                    <Label layoutX="31.0" layoutY="31.0" text="Podaj stary PIN:">
+                        <font>
+                            <Font size="20.0" />
+                        </font>
+                    </Label>
+                    <PasswordField fx:id="boxOldPin" layoutX="183.0" layoutY="34.0" />
+                    <Label layoutX="26.0" layoutY="63.0" text="Podaj nowy PIN:">
+                        <font>
+                            <Font size="20.0" />
+                        </font>
+                    </Label>
+                    <PasswordField fx:id="boxNewPin" layoutX="183.0" layoutY="65.0" />
+                    <Button layoutX="183.0" layoutY="103.0" mnemonicParsing="false" onAction="#changePin" text="Zatwierdź">
+                        <font>
+                            <Font size="20.0" />
+                        </font>
+                    </Button>
+            </AnchorPane>
+        </Tab>
+    </TabPane>
+</AnchorPane>
