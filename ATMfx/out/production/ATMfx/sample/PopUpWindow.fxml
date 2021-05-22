@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="92.0" prefWidth="235.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerPopUpWindow">
+   <children>
+      <Label fx:id="labelMessage" alignment="CENTER" layoutX="1.0" layoutY="14.0" prefHeight="30.0" prefWidth="235.0" text="Label">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button fx:id="closeButton" layoutX="101.0" layoutY="55.0" mnemonicParsing="false" onAction="#closeWindow" text="OK" />
+   </children>
+</AnchorPane>

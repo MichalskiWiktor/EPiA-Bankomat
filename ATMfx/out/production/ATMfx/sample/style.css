@@ -1,7 +1,4 @@
-#anchor{
-    -fx-background-color:#eb4034;
-}
-#anchor2{
+#anchor, #anchor2, #anchor3{
     -fx-background-color:#eb4034;
 }
 #title{

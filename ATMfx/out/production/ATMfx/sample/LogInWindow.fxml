@@ -10,13 +10,13 @@
                 <Font size="31.0" />
             </font>
         </Label>
-        <Label fx:id="pinLabel" layoutX="188.0" layoutY="60.0" text="Podaj PIN:">
+        <Label layoutX="188.0" layoutY="60.0" text="Podaj PIN:">
             <font>
                 <Font size="17.0" />
             </font>
         </Label>
         <PasswordField fx:id="pinTextField" layoutX="154.0" layoutY="92.0" />
-        <Label fx:id="cardNumberLabel" layoutX="158.0" layoutY="122.0" text="Podaj numer karty:">
+        <Label layoutX="158.0" layoutY="122.0" text="Podaj numer karty:">
             <font>
                 <Font size="17.0" />
             </font>

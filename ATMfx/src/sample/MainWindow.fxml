@@ -7,7 +7,7 @@
 <AnchorPane fx:id="anchor2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="225.0" prefWidth="480.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ControllerMainWindow">
     <TabPane prefHeight="408.0" prefWidth="480.0" tabClosingPolicy="UNAVAILABLE">
         <Tab text="Info">
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="480.0"><Label fx:id="infoTitleLabel" alignment="CENTER" layoutX="167.0" layoutY="14.0" prefHeight="33.0" prefWidth="143.0" text="Dane Konta:">
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="250.0" prefWidth="480.0"><Label fx:id="infoTitleLabel" alignment="CENTER" layoutX="106.0" layoutY="14.0" prefHeight="35.0" prefWidth="173.0" text="Konto admina:">
                 <font>
                     <Font size="24.0" />
                 </font></Label>
@@ -65,7 +65,7 @@
         </Tab>
         <Tab text="Wypłata">
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="235.0">
-                <Label fx:id="removeMoneyLabel" layoutX="39.0" layoutY="58.0" text="Podaj kwotę:">
+                <Label layoutX="39.0" layoutY="58.0" text="Podaj kwotę:">
                     <font>
                         <Font size="20.0" />
                     </font>
@@ -85,13 +85,13 @@
         </Tab>
         <Tab text="Przelew">
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="235.0">
-                <Label fx:id="removeMoneyToAnotherAccountLabel" layoutX="57.0" layoutY="32.0" text="Podaj kwotę:">
+                <Label layoutX="57.0" layoutY="32.0" text="Podaj kwotę:">
                     <font>
                         <Font size="20.0" />
                     </font>
                 </Label>
                 <TextField fx:id="moneyRemoveToAnotherAccountTextField" layoutX="183.0" layoutY="34.0" />
-                <Label fx:id="getIDLabel" layoutX="7.0" layoutY="63.0" text="Podaj ID odbiorcy:">
+                <Label layoutX="7.0" layoutY="63.0" text="Podaj ID odbiorcy:">
                     <font>
                         <Font size="20.0" />
                     </font>
@@ -110,7 +110,7 @@
                <ListView fx:id="listOperationHistory" layoutX="52.0" prefHeight="194.0" prefWidth="377.0" />
             </children></AnchorPane>
         </Tab>
-        <Tab text="Ustawienia">
+        <Tab text="Zmień pin">
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="235.0">
                     <Label layoutX="31.0" layoutY="31.0" text="Podaj stary PIN:">
                         <font>
