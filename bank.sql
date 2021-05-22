@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 20, 2021 at 11:57 AM
+-- Generation Time: May 22, 2021 at 07:09 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -24,14 +24,33 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `administrators`
+--
+
+CREATE TABLE `administrators` (
+  `id` int(11) NOT NULL,
+  `card_number` int(9) DEFAULT NULL,
+  `pin` int(4) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
+
+--
+-- Dumping data for table `administrators`
+--
+
+INSERT INTO `administrators` (`id`, `card_number`, `pin`) VALUES
+(1, 111111111, 1111);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `customers`
 --
 
 CREATE TABLE `customers` (
   `id` int(11) NOT NULL,
-  `card_number` int(10) NOT NULL,
-  `pin` int(4) NOT NULL,
-  `ammount` int(11) NOT NULL
+  `card_number` int(9) DEFAULT NULL,
+  `pin` int(4) DEFAULT NULL,
+  `ammount` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
 
 --
@@ -39,9 +58,9 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `card_number`, `pin`, `ammount`) VALUES
-(1, 123456789, 1234, 6679),
-(2, 987654321, 4321, 3020),
-(3, 123498765, 2345, 1000000);
+(1, 123456789, 1111, 4901),
+(2, 987654321, 1234, 1100),
+(3, 123498765, 4321, 100011);
 
 -- --------------------------------------------------------
 
@@ -70,11 +89,20 @@ INSERT INTO `operation_history` (`id`, `name`, `ammount`, `type`, `date`, `id_cu
 (5, 'brak', 111, 'wplata', '2021-05-20', 1),
 (6, 'brak', 1111, 'wyplata', '2021-05-20', 1),
 (13, 'przelew za zamówienie nr.4', 555, 'przelew wychodzący', '2021-05-20', 1),
-(14, 'przelew za zamówienie nr.4', 555, 'przelew przychodzący', '2021-05-20', 2);
+(14, 'przelew za zamówienie nr.4', 555, 'przelew przychodzący', '2021-05-20', 2),
+(16, 'brak', 11, 'wplata', '2021-05-21', 3),
+(17, 'brak', 99, 'wyplata', '2021-05-21', 1),
+(18, 'brak', 100, 'wplata', '2021-05-22', 2);
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `administrators`
+--
+ALTER TABLE `administrators`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `customers`
@@ -93,10 +121,22 @@ ALTER TABLE `operation_history`
 --
 
 --
+-- AUTO_INCREMENT for table `administrators`
+--
+ALTER TABLE `administrators`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `customers`
+--
+ALTER TABLE `customers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `operation_history`
 --
 ALTER TABLE `operation_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
