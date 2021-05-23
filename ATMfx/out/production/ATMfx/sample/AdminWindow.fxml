@@ -60,9 +60,31 @@
         </Tab>
         <Tab text="Dodaj Konto">
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="235.0">
-                <children>
-
-                </children></AnchorPane>
+            <children>
+               <Label alignment="CENTER" layoutX="23.0" layoutY="85.0" text="Podaj numer karty:">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="newAccountCardNumber" layoutX="196.0" layoutY="87.0" />
+               <Label alignment="CENTER" layoutX="23.0" layoutY="28.0" prefHeight="30.0" prefWidth="168.0" text="Podaj PIN:">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+               </Label>
+               <Label alignment="CENTER" layoutX="23.0" layoutY="58.0" prefHeight="30.0" prefWidth="167.0" text="Podaj środki:">
+                  <font>
+                     <Font size="20.0" />
+                  </font>
+               </Label>
+               <TextField fx:id="newAccountAmmount" layoutX="196.0" layoutY="60.0" />
+               <PasswordField fx:id="newAccountPin" layoutX="196.0" layoutY="33.0" />
+                <Button layoutX="183.0" layoutY="129.0" mnemonicParsing="false" onAction="#addUser" text="Zatwierdź">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Button>
+            </children></AnchorPane>
         </Tab>
         <Tab text="Usuń Konto">
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="371.0" prefWidth="235.0">

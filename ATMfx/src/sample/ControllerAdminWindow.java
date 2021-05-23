@@ -19,7 +19,10 @@ public class ControllerAdminWindow {
     @FXML private TextField boxMoneyAddID;
     @FXML private TextField boxMoneyRemoveID;
     @FXML private TextField boxIDToAccountOfNewPin;
+    @FXML private TextField newAccountAmmount;
+    @FXML private TextField newAccountCardNumber;
     @FXML private PasswordField boxNewPin;
+    @FXML private PasswordField newAccountPin;
     @FXML private ListView listAccounts;
     private int[][] data;
     ArrayList<Integer> ids = new ArrayList();
@@ -127,6 +130,30 @@ public class ControllerAdminWindow {
         }
     }
     public void addUser(){
+        if(this.newAccountPin.getText().length()==4 && Integer.parseInt(this.newAccountPin.getText())>=1000 &&  Integer.parseInt(this.newAccountPin.getText())<=9999){
+            if(this.newAccountCardNumber.getText().length()==9 && Integer.parseInt(this.newAccountCardNumber.getText())>=100000000 && Integer.parseInt(this.newAccountCardNumber.getText())<=999999999){
+                if(Integer.parseInt(this.newAccountAmmount.getText())>=0){
+                    try {
+                        Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/bank", "root", "");
+                        Statement myStat = myConn.createStatement();
+                        myStat.execute("INSERT INTO customers(card_number, pin, ammount) VALUES("+Integer.parseInt(this.newAccountCardNumber.getText())+", "+Integer.parseInt(this.newAccountPin.getText())+", "+Integer.parseInt(this.newAccountAmmount.getText())+")");
+                        this.resetWindow();
+                    }
+                    catch(Exception exc){
+                        exc.printStackTrace();
+                    }
+                }
+                else{
+                    this.createPopUpWindow("Błędna ilość środków!!");
+                }
+            }
+            else{
+                this.createPopUpWindow("Błędny numer karty!!");
+            }
+        }
+        else{
+            this.createPopUpWindow("Błędny kod PIN!!");
+        }
     }
     public void delUser(){
         String selectedItem = String.valueOf(this.listAccounts.getSelectionModel().getSelectedItem());
